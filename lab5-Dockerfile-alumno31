@@ -1,0 +1,10 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY pi.ipynb /app/
+
+RUN pip install ipython nbformat numpy numba 
+
+CMD ["ipython", "/app/pi.ipynb", "10**5"]
+
